@@ -9,12 +9,11 @@ namespace Rezon73\PDOClickHouse\Statement;
 
 use Rezon73\PDOClickHouse\AbstractStatement;
 use Rezon73\PDOClickHouse\Clause;
-use PDO;
-use PDOStatement;
 use Rezon73\PDOClickHouse\PDOClickHouse;
+use Rezon73\PDOClickHouse\PDOClickHouseStatement;
 
 /**
- * @method PDOStatement execute()
+ * @method PDOClickHouseStatement execute()
  */
 class Call extends AbstractStatement
 {

@@ -25,7 +25,7 @@ abstract class AbstractStatement implements QueryInterface
     /**
      * @throws PDOException
      *
-     * @return bool|\PDOStatement|PDOClickHouseStatement
+     * @return bool|PDOClickHouseStatement
      */
     public function execute()
     {

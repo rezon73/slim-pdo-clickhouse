@@ -10,12 +10,12 @@ namespace Rezon73\PDOClickHouse\Statement;
 use Rezon73\PDOClickHouse\AdvancedStatement;
 use Rezon73\PDOClickHouse\Clause;
 use Rezon73\PDOClickHouse\PDOClickHouse;
+use Rezon73\PDOClickHouse\PDOClickHouseStatement;
 use Rezon73\PDOClickHouse\QueryInterface;
 use PDO;
-use PDOStatement;
 
 /**
- * @method PDOStatement execute()
+ * @method PDOClickHouseStatement execute()
  */
 class Select extends AdvancedStatement
 {
