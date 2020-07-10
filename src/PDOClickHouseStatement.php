@@ -41,7 +41,7 @@ class PDOClickHouseStatement
         if($this->param == null) {
             $this->stmt = $this->conn->execute($this->qry);
         } else {
-            $this->stmt = $this->conn->execute($this->stmt, $this->param);
+            $this->stmt = $this->conn->execute($this->qry, $this->param);
         }
 
         $this->clearParam();
