@@ -7,8 +7,6 @@
 
 namespace Rezon73\PDOClickHouse;
 
-use PDO;
-
 class Database extends PDOClickHouse
 {
     /**
@@ -16,7 +14,7 @@ class Database extends PDOClickHouse
      * @param int $port
      * @codeCoverageIgnore
      */
-    public function __construct($host, $port = 8123)
+    public function __construct($host = '127.0.0.1', $port = 8123)
     {
         parent::__construct($host, $port);
     }
