@@ -14,9 +14,9 @@ class Database extends PDOClickHouse
      * @param int  $port
      * @codeCoverageIgnore
      */
-    public function __construct(string $host = '127.0.0.1', $port = 8123)
+    public function __construct($host = 'http://127.0.0.1', $port = 8123, $username = null, $password = null, $settings = [], $transport = null)
     {
-        parent::__construct($host, $port);
+        parent::__construct($host, $port, $username, $password, $settings, $transport);
     }
 
     /**
