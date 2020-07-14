@@ -38,7 +38,7 @@ class Select extends AdvancedStatement
     protected $having = null;
 
     /**
-     * @param PDO                      $dbh
+     * @param PDOClickHouse            $dbh
      * @param string[]|Clause\Method[] $columns
      */
     public function __construct(PDOClickHouse $dbh, array $columns = ['*'])
@@ -255,6 +255,8 @@ class Select extends AdvancedStatement
             }
             $sql .= ')';
         }
+
+        $sql .= ' FORMAT JSON';
 
         return $sql;
     }

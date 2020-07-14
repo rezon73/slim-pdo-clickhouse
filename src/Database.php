@@ -11,10 +11,10 @@ class Database extends PDOClickHouse
 {
     /**
      * @param $host
-     * @param int $port
+     * @param int  $port
      * @codeCoverageIgnore
      */
-    public function __construct($host = '127.0.0.1', $port = 8123)
+    public function __construct(string $host = '127.0.0.1', $port = 8123)
     {
         parent::__construct($host, $port);
     }

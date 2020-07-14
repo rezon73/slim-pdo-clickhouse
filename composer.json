@@ -41,7 +41,7 @@
     "minimum-stability": "stable",
     "scripts": {
         "lint": [
-            "phpcs -s --standard=phpcs.xml",
+            "vendor/squizlabs/php_codesniffer/bin/phpcs -s --standard=phpcs.xml",
             "phan"
         ],
         "test": "phpunit -v --coverage-html build/coverage tests/"
