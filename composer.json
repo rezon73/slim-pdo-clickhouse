@@ -21,7 +21,7 @@
         "php": ">=7.4.0",
         "ext-pdo": "*",
         "ext-odbc": "*",
-        "rezon73/clickhouse-php-client": "^0.0.6"
+        "rezon73/clickhouse-php-client": "^0.0.9"
     },
     "require-dev": {
         "phan/phan": "^2.2",
