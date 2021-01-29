@@ -37,6 +37,8 @@ class Select extends AdvancedStatement
     /** @var Clause\Conditional|null $having */
     protected $having = null;
 
+    protected $isSubQuery = false;
+
     /**
      * @param PDOClickHouse            $dbh
      * @param string[]|Clause\Method[] $columns
@@ -46,6 +48,13 @@ class Select extends AdvancedStatement
         parent::__construct($dbh);
 
         $this->columns($columns);
+    }
+
+    public function setIsSubQuery(bool $isSubQuery): self
+    {
+        $this->isSubQuery = $isSubQuery;
+
+        return $this;
     }
 
     /**
@@ -256,7 +265,9 @@ class Select extends AdvancedStatement
             $sql .= ')';
         }
 
-        $sql .= ' FORMAT JSON';
+        if (!$this->isSubQuery) {
+            $sql .= ' FORMAT JSON';
+        }
 
         return $sql;
     }
