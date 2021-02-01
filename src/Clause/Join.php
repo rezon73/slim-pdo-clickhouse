@@ -38,7 +38,26 @@ class Join implements QueryInterface
      */
     public function getValues(): array
     {
-        return $this->on->getValues();
+        $values = [];
+        $table = $this->subject;
+        if (is_array($this->subject)) {
+            reset($this->subject);
+            $alias = key($this->subject);
+            if (!is_string($alias)) {
+                trigger_error('Invalid subject array, use string keys for alias', E_USER_ERROR);
+            }
+
+            $table = $this->subject[$alias];
+            if ($table instanceof Select) {
+                $values = array_merge($values, $table->getValues());
+            }
+        } elseif (!is_string($this->subject)) {
+            trigger_error('Invalid subject value, use array with string key for alias', E_USER_ERROR);
+        }
+
+        $values = array_merge($values, $this->on->getValues());
+
+        return $values;
     }
 
     /**
